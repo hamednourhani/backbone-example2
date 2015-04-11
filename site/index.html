@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Backbone.js Library</title>
+        <link rel="stylesheet" href="css/screen.css">
+    </head>
+    <body>
+        <script src="js/libs/jquery.js"></script>
+        <script src="js/libs/underscore.js"></script>
+        <script src="js/libs/backbone.js"></script>
+        <script src="js/models/book.js"></script>
+        <script src="js/collections/library.js"></script>
+        <script src="js/views/book.js"></script>
+        <script src="js/views/library.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
+We should also add in the HTML for the user interface. We’ll want a form for adding a new book, so add the following immediately inside the body element:
+
+<div id="books">
+    <form id="addBook" action="#">
+        <div>
+            <label for="coverImage">CoverImage: </label><input id="coverImage" type="file" />
+            <label for="title">Title: </label><input id="title" type="text" />
+            <label for="author">Author: </label><input id="author" type="text" />
+            <label for="releaseDate">Release date: </label><input id="releaseDate" type="text" />
+            <label for="keywords">Keywords: </label><input id="keywords" type="text" />
+            <button id="add">Add</button>
+        </div>
+    </form>
+</div>
+and we’ll need a template for displaying each book which should be placed before the script tags:
+
+<script id="bookTemplate" type="text/template">
+    <img src="<%= coverImage %>"/>
+    <ul>
+        <li><%= title %></li>
+        <li><%= author %></li>
+        <li><%= releaseDate %></li>
+        <li><%= keywords %></li>
+    </ul>
+
+    <button class="delete">Delete</button>
+</script>
+To see what this will look like with some data in it, go ahead and add a manually filled-in book to the books div.
+
+<div class="bookContainer">
+    <img src="img/placeholder.png"/>
+    <ul>
+        <li>Title</li>
+        <li>Author</li>
+        <li>Release Date</li>
+        <li>Keywords</li>
+    </ul>
+
+    <button class="delete">Delete</button>
+</div>
